@@ -1,7 +1,7 @@
 name: 漏洞报告
 description: 报告安全漏洞
 title: "[漏洞] "
-labels: ["Valnerability"]
+labels: ["Vulnerability"]
 body:
   - type: markdown
     attributes:
