@@ -1,0 +1,54 @@
+name: 用户举报
+description: 举报违规用户或内容
+title: "[举报] "
+labels: ["Report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > 请勿在举报中公开他人隐私信息
+        > 证明材料请尽量使用链接或打码截图
+
+  - type: input
+    id: location
+    attributes:
+      label: 举报位置
+      description: 违规内容出现的页面 / 板块 / 帖子链接
+      placeholder: 例如：https://example.com/thread/12345
+    validations:
+      required: true
+
+  - type: input
+    id: target
+    attributes:
+      label: 用户名或 UID
+      description: 被举报用户的昵称和/或 UID
+      placeholder: 例如：昵称 xxx / UID 114514
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: 举报原因
+      description: 说明违规行为及所违反的社区规则
+      placeholder: 例如：发布广告 / 人身攻击 / 侵权 …
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 证明材料
+      description: 截图、链接、聊天记录等（可直接拖拽上传图片）
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: allow_intervention
+    attributes:
+      label: 是否允许其他用户介入
+      description: 勾选表示同意其他用户参与本举报的讨论与举证
+      options:
+        - label: 允许其他用户介入本举报的讨论
+          required: false

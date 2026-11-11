@@ -1,0 +1,55 @@
+name: Bug 反馈
+description: 报告一个可复现的缺陷
+title: "[Bug] "
+labels: ["Bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈！提交前请先搜索是否已有相同问题。
+
+  - type: input
+    id: software
+    attributes:
+      label: 软件
+      description: 出现问题的软件 / 项目 / 模块（含版本号更佳）
+      placeholder: 例如：TouchFish Client 0.0.3
+    validations:
+      required: true
+
+  - type: input
+    id: summary
+    attributes:
+      label: Bug 概述
+      description: 用一句话说明问题
+      placeholder: 例如：点击发送语音按钮后界面卡死
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现过程
+      description: 按步骤描述如何触发该问题
+      placeholder: |
+        1. 打开 …
+        2. 点击 …
+        3. 观察 …
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望行为
+      description: 你预期应该发生什么？
+    validations:
+      required: false
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际行为
+      description: 实际发生了什么？可附日志、截图、录屏
+    validations:
+      required: false

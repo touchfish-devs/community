@@ -1,0 +1,58 @@
+name: 漏洞报告
+description: 报告安全漏洞
+title: "[漏洞] "
+labels: ["Valnerability"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > 若漏洞细节极其敏感（如可直接获取用户数据），请优先通过私下渠道联系维护者，
+        > 确认后再公开。
+
+  - type: input
+    id: software
+    attributes:
+      label: 软件
+      description: 受影响的软件 / 项目 / 模块（含版本号）
+      placeholder: 例如：TouchFish Server
+    validations:
+      required: true
+
+  - type: input
+    id: cvss
+    attributes:
+      label: 等级
+      description: 填写 1~10 的 CVSS 评分，可带一位小数（选填）
+      placeholder: 例如：7.5
+    validations:
+      required: false
+
+  - type: textarea
+    id: attack_surface
+    attributes:
+      label: 攻击面
+      description: 漏洞所在位置与触发条件，如接口、参数、认证要求等
+      placeholder: 例如：/api/v1/upload 接口未校验文件类型，无需登录即可访问
+    validations:
+      required: true
+
+  - type: textarea
+    id: poc
+    attributes:
+      label: 复现过程
+      description: 详细的复现步骤或 PoC（请勿包含真实用户数据）
+      placeholder: |
+        1. …
+        2. …
+        3. 观察到 …
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: credit_public
+    attributes:
+      label: 是否允许在修复后公开报告者
+      description: 勾选表示漏洞修复后，可在公告中致谢你的用户名
+      options:
+        - label: 允许在漏洞修复后公开我的用户名作为报告者
+          required: false

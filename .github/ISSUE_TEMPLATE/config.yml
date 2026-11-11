@@ -1,0 +1,4 @@
+nk_issues_enabled: true
+contact_links:
+   - name: 使用工单系统提交
+     url: https://feedback.touchfish.us.ci
